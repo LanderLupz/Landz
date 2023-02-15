@@ -34,7 +34,7 @@ let model;
 (async function () {
 	
 	model = await tf.loadModel('https://github.com/LanderLupz/Landz/blob/main/model_final/model.json');
-	$("#selected-image").attr("src", "https://github.com/LanderLupz/Landz/tree/main/assets");
+	$("#selected-image").attr("src", "https://github.com/LanderLupz/Landz/tree/main/assets/NV.jpg");
 	
 	// Hide the model loading spinner
 	// This line of html gets hidden:
