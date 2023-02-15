@@ -45,7 +45,7 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('http://concept.test.woza.work/final_model_kaggle_version1/model.json');
+	model = await tf.loadModel('https://github.com/LanderLupz/Landz/blob/main/model_final/model.json');
 	$("#selected-image").attr("src", "http://localhost/SkinAnalyzer/assets/skind.jpg")
 	
 	
