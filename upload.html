@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	.container{
+		margin-top:150px;
+	}
+.btn-file {
+		position: relative;
+		overflow: hidden;
+	}
+	.btn-file input[type=file] {
+		position: absolute;
+		top: 0;
+		right: 0;
+		min-width: 100%;
+		min-height: 100%;
+		font-size: 100px;
+		text-align: right;
+		filter: alpha(opacity=0);
+		opacity: 0;
+		outline: none;
+		background: white;
+		cursor: inherit;
+		display: block;
+	}
+	
+	#img-upload{
+		width: 25%;
+		display: block;
+		
+	}
+	#upload{
+		margin-top:10px;
+	}
+</style>
+<!-- main css -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- media queries css -->
+<link href="css/media-queries.css" rel="stylesheet" type="text/css">
+<!-- html5.js for IE less than 9 -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src='js/upload.js'></script>
+<script  src="prefixfree/1-0-7/prefixfree.dynamic-dom.min.js"></script>
+<!-- jQuery -->
+<script src="ajax/libs/jquery/1-10-2/jquery.min.js"></script>
+<script src="ajax/libs/jqueryui/1-8/jquery-ui.min.js"></script>
+<script src="js/jsapi.js"></script>
+<script  src="js/main.js"></script>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48354920-1', 'lubax.com');
+	ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+		<div id="pagewrap" data-nav="home">
+			
+	<header id="header">
+		<div id="header-center">
+	
+			
+			<nav>
+				<ul id="main-nav">
+					<li><a href="#about" class="nav">About Us</a></li>
+					<li><a href="#how" class="nav">How it Works</a></li>
+					<li><a href="#news" class="nav">News</a> </li>
+					<li><a href="#contact" class="nav">Contact</a></li>
+				</ul>
+				<!-- /#main-nav --> 
+			</nav>
+		</div>
+	</header>
+	
+	</div>
+	<?php
+session_start();
+if (isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+    session_write_close();
+} else {
+    // since the username is not set in session, the user is not-logged-in
+    // he is trying to access this page unauthorized
+    // so let's clear all session variables and redirect him to index
+    session_unset();
+    session_write_close();
+    $url = "index.html";
+    header("Location: $url");
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Skin Disease Analyzer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use the power of Machine Learning to diagnose Skin Lesions.">
+
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/skin.css">
+
+<!--Link to Font Awesome icons-->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
+
+
+
+<!--Link to fonts from google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+<link rel="shortcut icon" type="image/png" href="robotfavicon.png">
+
+
+<style>
+html,body,h2,h3,h4,p,h5,li {font-family: Roboto, sans-serif}
+</style>
+
+
+</head>
+
+
+
+
+<body class="bground-color">
+
+
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+<div class="w3-content" style="max-width:960px">
+
+
+
+<!-- 1. HOME PAGE -->
+<div class="tabbed w3-animate-opacity w3-white" id="home">
+	
+	
+<!-- Top Bar -->
+<div class='w3-center'>
+	<p class="space-letters-large w3-small w3-tag bground-color w3-text-teal w3-border w3-round">
+		<a class="change-size" href="logout.php"><b>Logout</b></a>
+	<!--<p class="space-letters-large w3-small w3-tag bground-color w3-text-teal w3-border w3-round">
+		<a class="change-size" href="faq.html"><b>About</b></a>-->
+
+</div>
+
+
+
+
+	
+
+<!-- Front page image -->
+<!-- This image will be replaced once the js code runs. -->
+<div class="w3-center w3-padding-bottom">
+	
+
+	<img id="selected-image" class="w3-round adjust-image" src="assets/skind.jpg" height="250" alt="Image for analysis"> 
+	
+</div> 
+
+
+
+
+<!-- Button -->
+<div id="btnn" class="w3-center">
+	
+	<button class="w3-btn w3-deep-orange w3-hover-blue w3-round w3-margin-bottom adjust-spacing btn-font w3-padding w3-space-letters w3-text-white" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)"><i class='fas fa-camera w3-padding-right' style='font-size:15px'></i>
+		<b>Select Skin Disease to Analyze</b></button>
+	<!--<p class="w3-text-teal">jpeg or png</p>-->
+</div> 
+
+
+
+<div class="w3-center">
+	<div  class="progress-bar w3-text-teal space-letters">
+	<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+	<p>Model is loading...</p></div>
+</div>
+
+<!-- Progress Bar 
+Just here for graphics.
+The functionality was not implemented because it slows down the model download 
+and causes it to fail.-->
+<div class="w3-light-grey side-margin w3-opacity">
+<div  id="myBar" class="w3-container w3-blue" style="height:5px;width:100%"></div>
+</div>
+
+
+<!-- Results Box -->
+<div class="w3-center w3-border add-margin side-margin w3-round w3-sand
+text-color space-letters bottom-margin dont-break-out">
+
+	<p>Results</p>
+	
+	<!-- Remember that an ordered or unordered list has tabs by default.
+	CSS is not styling the prediction outputs. The tabs you see are the default
+	tabs associated with lists.-->
+	<ol class='w3-left-align text-color' id='prediction-list'></ol>
+		
+</div>
+
+
+
+
+<!-- Bottom Bar -->
+<div class='w3-center w3-padding-bottom'>
+	<p class="space-letters">
+		<a class="w3-small w3-hover-text-deep-orange text-color" href="index.html">
+		<b>Skin Disease Analyzer</b></a>
+	</p>
+</div>
+
+
+</div><!--END OF HOME PAGE-->
+
+
+
+<!-- We simulate clicks on these two. -->
+<div class="hide">
+	<button id='predict-button'>Predict</button>
+</div>
+
+<div class="hide">
+	<input id="image-selector" type="file" multiple>
+</div>
+<!--===================================-->
+
+
+	<!-- Load jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
+	
+	
+	<!--Load TensorFlow.js
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.6.0/dist/tf.min.js"> 
+	</script>-->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> 
+	</script>
+	
+	
+	<!-- Load the js files -->
+	<script src="jscript/target_classes.js"></script>
+	<script src="jscript/app_startup_code.js"></script>
+	<script src="jscript/app_batch_prediction_code.js"></script>
+	
+	
+	
+	
+	
+</div> <!-- w3-content -->
+
+</body>
+</html>
+
+
+	<div class="container">
+			<center>
+				<img id='img-upload'/>
+			</center>
+				<div class="col-md-6">
+					<form class="form-group" action="../uploaded" method='post' enctype="multipart/form-data">
+						<label>Upload Image</label>
+						<div class="input-group">
+							<span class="input-group-btn">
+								<span class="btn btn-default btn-file">
+									Browse… <input type="file" id="imgInp" name="file">
+								</span>
+							</span>
+							<input type="text" class="form-control" readonly>
+							
+						</div>
+						<input type='submit' id='upload' class='btn btn-lg btn-success' value='Upload'>
+					</form>
+				</div>
+				</div>
+</body>
+</html>
+

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8">
+
+<!-- disable iPhone scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Skin Disease Analyzer</title>
+<meta name="description" content="Upload a photo of your skin disease on your web, and this will analyze the skin disease type and show you the most relevant information.">
+<!-- main css -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- media queries css -->
+<link href="css/media-queries.css" rel="stylesheet" type="text/css">
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- css3-mediaqueries.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<!-- lets you use only unprefixed CSS properties  -->
+<script  src="prefixfree/1-0-7/prefixfree.dynamic-dom.min.js"></script>
+<!-- jQuery -->
+<script src="ajax/libs/jquery/1-10-2/jquery.min.js"></script>
+<script src="ajax/libs/jqueryui/1-8/jquery-ui.min.js"></script>
+<script src="js/jsapi.js"></script>
+<script  src="js/main.js"></script>
+<!-- Google Analytics tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-48354920-1', 'lubax.com');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<div id="pagewrap" data-nav="home">
+		<a id="site-logo" href="index.html" title="Home"></a>
+	<header id="header">
+		<div id="header-center">
+			
+			
+			<nav>
+				<ul id="main-nav">
+					<li><a href="#about" class="nav">About Us</a></li>
+					<li><a href="#how" class="nav">How it Works</a></li>
+					<li><a href="#faqs" class="nav">FAQs</a> </li>
+					<li><a href="#contact" class="nav">Contact Us</a></li>
+					<li><a href="login.php" class="nav">Skin Analyzer</a></li>
+				</ul>
+				<!-- /#main-nav --> 
+			</nav>
+		</div>
+	</header>
+	<!-- /#header -->
+	<div id="content">
+		<div id="panel1">
+			<div id="panel1-inside">
+				<div id="panel1-right">
+					<h1>Introducing , a web-based clinical reference to identify skin disease</h1>
+					<div class="panel1-sq" id="sq3">
+						<div class="pic-icon sq-icon"></div>
+						<div class="sq-title"><a href="login.php">Go to Analyzer</a></div>
+					</div>
+					<div class="clearfix"></div>
+					<h2>
+						Easy access webapp Skin Disease Analyzer
+					</h2>
+				</div>
+				<a class="pic-icon down1 nav" href="#about"></a>
+			</div>
+		</div>
+		<!-- /#panel1 --> 
+		<div id="panel2" data-nav="about">
+			<h3 class="center-title">About Us</h3>
+			<div class="panel-inside">
+				<div class="panel2-sq" id="sq1">
+					<div class="pic-icon sq-icon"></div>
+					<div class="sq-text">
+					<p align ="justify">	This web-app helps you quickly analyze a skin disease. This web-app does it in an instant!
+					</div>
+				</div>
+				<div class="panel2-sq" id="sq2">
+					<div class="pic-icon sq-icon"></div>
+					<div class="sq-text">
+						<p align ="justify">This web-app is designed to be more than a one-disease app. We have 10,015 test images and growing. We are beginning trials to review our accuracy as a diagnostic aid for skin diseases.
+					</div>
+				</div>
+				<div class="panel2-sq" id="sq3">
+					<div class="pic-icon sq-icon"></div>
+					<div class="sq-text">
+						<p align ="justify">Our aim is to provide a simple, inexpensive software system to identify potentially all types of skin diseases using a web-app-based platform.
+					</div>
+				</div>
+				<div class="panel2-sq" id="sq4" style="margin-right: 0">
+					<div class="pic-icon sq-icon"></div>
+					<div class="sq-text">
+						<p align ="justify">Our system uses Convolutional Neural Network (CNN) algorithms to detect skin-disease types. <p align ="justify"><br>We are currently traning and testing our datasets and algorithm to achieve more accuracy and reliable models.  As our machine learning learns, this web-app will recognize more and more skin diseases.</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<a id="panel2-down" class="pic-icon down2 nav" href="#how"></a>
+		</div>
+		<!-- /#panel2 --> 
+		<div id="panel3" data-nav="how">
+			<h3 class="center-title">How it Works</h3>
+			<div class="panel-inside">
+				<div id="panel3-sq1">
+					<h3>The Algorithm</h3>
+					<div id="sq3-text">
+						<p align = "justify">This skin disease analyzer uses Convolutional Neural Network, in creating the model, the test images gone through data preparations and be fed to tensorflow keras for the web deployment. The model to identify the skin disease has an accuracy of 81%. This web-application supports the 81% accuracy by displaying 3 possible skin disease, the top 2 diagnosis has an accuracy of 91% while the top 3 diagnosis has an accuracy of 96%. By that being said, we therefore conclude that the model is quite good in detecting skin diseases, but the outcome of skin diagnose comparisons is only effective when discussed with a qualified health care provider </p>
+					</div>
+				</div>
+				<img id="panel3-sq2" src="images/algorithm.png" class="panel-img" alt="Skin Disease Algorithm"/>
+				<div class="clearfix"></div>
+			</div>
+			<a class="pic-icon down1 nav" href="#database"></a>
+		</div>
+		<!-- /#panel3 --> 
+		<div id="panel4" data-nav="database">
+			<h3 class="center-title">The Dataset</h3>
+			<div class="panel-inside">
+				<img id="panel4-sq1" src="images/database.png" class="panel-img"  alt="Dataset"/>
+				<div id="panel4-sq2">
+					<p align ="justify">Our reference image Dataset is a collected dermatoscopic images from different populations, acquired and stored by different modalities. </p>
+					<p align ="justify">The final dataset consists of 10,015 dermatoscopic images which can serve as a training set for academic machine learning purposes. Cases include a representative collection of all important diagnostic categories in the realm of pigmented lesions: Actinic keratoses and Intraepithelial carcinoma / Bowen's disease (akiec), Basal cell carcinoma (bcc), Benign keratosis-like lesions (solar lentigines / seborrheic keratoses and lichen-planus like keratoses, bkl), dermatofibroma (df), melanoma (mel), melanocytic nevi (nv) and vascular lesions (angiomas, angiokeratomas, pyogenic granulomas and hemorrhage, vasc)..</p>
+					<p align ="justify">More than 50% of lesions are confirmed through histopathology (histo), the ground truth for the rest of the cases is either follow-up examination (followup), expert consensus (consensus), or confirmation by in-vivo confocal microscopy (confocal).
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<a class="pic-icon down2 nav" href="#faqs"></a>
+		</div>
+		
+		<!-- /#panel6 --> 
+		<div id="panel5" data-nav="faqs">
+			<h3 class="center-title">FAQs</h3>
+			<div class="panel-inside">
+		
+			<p class='w3-text-black topp-margin'><b>Will I need to wait for the model to download every time I use the web-app?</b></p>
+			
+			<p>No. Once the model downloads it will be cached in memory. The next time you visit this site you won’t need to wait.</p>
+			<!--
+			<p>That said, I suggest that you always use this tool with your web browser set to incognito mode. The model won’t be saved, but this will ensure that each time you visit this site you will always use the most up to date version of the model and not the old one that's stored in your device's memory.
+			</p>
+			-->
+			
+			
+			<p class='w3-text-black topp-margin'><b>What about patient data privacy?</b></p>
+			
+			<p align ="justify">Your images are never sent to an external server. Any image you submit stays on your computer or mobile phone. This is because the model is running on your device. This is also why a batch of images can be analyzed in less than two seconds.</p>
+			
+			<p>The tech that makes this possible is called Tensorflow.js. It was created by Google.</p>
+			
+			
+			
+			
+			
+			
+			<p class='w3-text-black topp-margin'><b>What do the decimal numbers mean?</b></p>
+			
+			<p align ="justify">They are probability scores between 0 and 1. They show how confident the model is that a particular condition is present on the image. <br>
+				For example, <i>mel, Melanoma: 0.231</i> means that the model is 23% sure that the skin disease shown in the image is melanoma.</p>
+			
+			
+			
+			
+			
+			
+			<p class='w3-text-black topp-margin'><b>How do I use this app on a computer?
+			</b></p>
+			
+			<p>- Go to this site on your computer.<br>
+				- Login an account. (If don't have an existing account, you can signup) <br>
+				
+			- Click the black button.<br>
+			- Select one image and click ‘Open’.<br>
+			- The app will print results for each image.
+			</p>
+			
+			
+			
+			<!--
+			
+			<p class='w3-text-black topp-margin'><b>How do I use this app on a mobile phone?
+			</b></p>
+			
+			<p>You can submit photos that are stored on your phone. The steps below apply to Android. iOS may be similar but I'm not sure.</p>
+			
+			
+			<p class="w3-text-black"><b> Use images from your photo folder</b></p>
+			<p>- Go to this site on your phone.<br>
+				- Tap the orange button.<br>
+				- Tap "Files"<br>
+				- Tap the image name<br>
+				- To submit a batch of images, tap each image (tick) to select it and then tap "Open". 
+			</p>
+			
+			
+			
+				
+			<p class='w3-text-black topp-margin'><b> What would it take to make this tool more trustworthy?</b></p>
+			
+			<p>Three things are needed:<br>
+				- Collaboration with a dermatologist/pathologist.<br>
+				- More high quality labeled training data.<br>
+				- Field testing.</p>
+			
+			<p>Ai systems can be brittle. Good training scores don't guarantee that a model will perform well under real-world conditions. This tool first needs to be field tested. Then the model needs to be re-trained to make it more robust.
+			</p>
+		-->
+		<div class="clearfix"></div>
+			<a class=" pic-icon down1 nav" href="#contact"></a>
+		</div>
+		</div>
+		<!-- /#panel8 --> 
+		<div id="panel7" data-nav="contact">
+			<h3 class="center-title">Contact Us</h3>
+			<div class="panel-inside">
+				<div id="sq1">
+					<h4>CONTACT US</h4>
+					<div class="panel7-adr">University of Makati<br/>
+						+91 123456789<br/>
+						landz.pogi@gmail.com<br/>
+					</div>
+				</div>
+				<div id="sq2">
+					<h4>Comments and Concerns</h4>
+					<div id="signup_form">
+				<form name="contact-form" action="" method="post" id="contact-form">
+				<input type="text" class="form-control" name="your_name" placeholder="Name" required>
+				<input type="text" class="form-control" name="your_email" placeholder="Email" required>
+				<input type="text" class="form-control" name="your_phone" placeholder="Phone" required>
+				<textarea name="comments" class="form-control" rows="5"cols="55" placeholder="Comments"></textarea> 
+				</div>
+				<button type="submit" class="btn btn-primary" name="submit" value="Submit" id="submit_form">Submit</button>
+					</form>
+				
+					</div>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#contact-form").on("submit",function(e){
+e.preventDefault();
+if($("#contact-form [name='your_name']").val() === '')
+{
+$("#contact-form [name='your_name']").css("border","1px solid red");
+}
+else if ($("#contact-form [name='your_email']").val() === '')
+{
+$("#contact-form [name='your_email']").css("border","1px solid red");
+}
+else
+{
+$("#loading-img").css("display","block");
+var sendData = $( this ).serialize();
+$.ajax({
+type: "POST",
+url: "get_response.php",
+data: sendData,
+success: function(data){
+$("#loading-img").css("display","none");
+$(".response_msg").text(data);
+$(".response_msg").slideDown().fadeOut(3000);
+$("#contact-form").find("input[type=text], input[type=email], textarea").val("");
+}
+});
+}
+});
+$("#contact-form input").blur(function(){
+var checkValue = $(this).val();
+if(checkValue != '')
+{
+$(this).css("border","1px solid #eeeeee");
+}
+});
+});
+</script>
+				<div class="clearfix"></div>
+				<a class="pic-icon home nav" href="#home"></a>
+			</div>
+		</div>
+		<!-- /#panel7 --> 
+	</div>
+	<!-- /#content --> 
+	<footer id="footer">
+		&copy; 2022, Inc. All rights reserved
+		<div class="panel-inside">
+			This web-app is a communication tool that provides initial comparative information about skin disease. This information comes from tested model using HAM10000 Dataset. Outcome of skin diagnose comparisons is only effective when discussed with a qualified health care provider. 
+		</div>
+	</footer>
+	<!-- /#footer --> 
+</div>
+<!-- /#pagewrap -->
+</body>
+</html>
