@@ -9,7 +9,7 @@ if (isset($_SESSION["username"])) {
     // so let's clear all session variables and redirect him to index
     session_unset();
     session_write_close();
-    $url = "index.html";
+    $url = "login.php";
     header("Location: $url");
 }
 
