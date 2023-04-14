@@ -29,9 +29,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 GENERAL STYLING
 *************************************************************************************/
 body {
-	background: #8360c3;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #026acb;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #026acb, #026acb);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3FA9F5, #3FA9F5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-family: Helvetica, sans-serif;
 	line-height: 150%;
 
@@ -175,7 +175,7 @@ HEADER
 	height: 150px;
 	margin:0px;
 	padding:0px;
-	background: url(img/logoSA.png) no-repeat center 15px;
+	background: url("#") no-repeat center 15px;
 }
 
 
@@ -732,6 +732,35 @@ PANEL #8
 
 .feed-entry:hover .feed-title{
 	color: #000;
+}
+/************
+PANEL #9
+*************/
+#panel9{
+	background-color: #FFF;
+	z-index: 20;
+	position: relative;
+	padding-bottom: 40px;
+}
+
+#panel9 .center-title{
+	margin-bottom: 50px;
+}
+
+#panel9-sq1{
+	float: left;
+	width: 380px;
+	height: 500px;
+}
+
+#panel9-sq2{
+	width: 370px;
+	float: left;
+	margin: 10px 0 0 120px;
+}
+
+#panel9 .clearfix{
+	padding-bottom: 70px;
 }
 
 /************************************************************************************
