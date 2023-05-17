@@ -26,7 +26,7 @@ class DataSource
 
     const PASSWORD = '';
 
-    const DATABASENAME = 'user-registration';
+    const DATABASENAME = 'user_registration';
 
     private $conn;
 

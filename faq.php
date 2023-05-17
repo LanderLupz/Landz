@@ -1,4 +1,4 @@
-<!doctype html>
+
 	<?php
 session_start();
 if (isset($_SESSION["username"])) {
@@ -15,6 +15,7 @@ if (isset($_SESSION["username"])) {
 }
 
 ?>
+<!doctype html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta charset="utf-8">

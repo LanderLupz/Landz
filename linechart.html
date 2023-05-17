@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Chart</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <!--chart source-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Your HTML code here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="content mt-5">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <!--nav bars-->
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-pm25-tab" data-bs-toggle="tab" data-bs-target="#pm25" type="button" role="tab" aria-controls="nav-home" aria-selected="true">PM25</button>
+              <button class="nav-link" id="nav-pm10-tab" data-bs-toggle="tab" data-bs-target="#pm10" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">PM10</button>
+              <button class="nav-link" id="nav-o3-tab" data-bs-toggle="tab" data-bs-target="#o3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">o3</button>
+              <button class="nav-link" id="nav-co-tab" data-bs-toggle="tab" data-bs-target="#co" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CO</button>
+              <button class="nav-link" id="nav-aqs-tab" data-bs-toggle="tab" data-bs-target="#aqs" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">AQS</button>
+
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+             <!--chart line for pm 2.5-->
+            <div class="tab-pane fade show active" id="pm25" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="content">
+                <div class="container-fluid">
+                      <h1>Air Quality Graphical Representation</h1>
+                      <canvas id="pm25Chart"></canvas>
+                      <script>
+                        const data = {
+                          labels: ['March 27', 'March 28', 'March 29', 'March 30', 'March 31', 'April 01', 'April 02'],
+                          datasets: [{
+                            label: 'PM 2.5',
+                            data: [65, 59, 80, 81, 56, 55, 40],
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                          }]
+                        };
+
+                        const config = {
+                          type: 'line',
+                          data: data,
+                          options: {
+                            scales: {
+                              y: {
+                                min: 0,
+                                max: 500.4,
+                                axisLabel: 'PM 2.5 Levels'
+                              }
+                            }
+                          }
+                        };
+
+                        var myChart = new Chart(
+                          document.getElementById('pm25Chart'),
+                          config
+                        );
+
+                      </script>
+
+                    </div>
+                  </div>
+            </div>
+            <!--pm 10 navigation-->
+            <div class="tab-pane fade" id="pm10" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="content">
+                    <div class="container-fluid">
+                            <h1>Air Quality Graphical Representation for PM10</h1>
+                            <canvas id="pm10Chart"></canvas>
+                      <script>
+                        const datas = {
+                          labels: ['March 27', 'March 28', 'March 29', 'March 30', 'March 31', 'April 01', 'April 02'],
+                          datasets: [{
+                            label: 'PM 10',
+                            data: [255, 88, 80, 81, 56, 55, 40],
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                          }]
+                        };
+
+                        const configs = {
+                          type: 'line',
+                          data: datas,
+                          options: {
+                            scales: {
+                              y: {
+                                min: 0,
+                                max: 500.4,
+                                axisLabel: 'PM 10 Levels'
+                              }
+                            }
+                          }
+                        };
+
+                              var myChart = new Chart(
+                                document.getElementById('pm10Chart'),
+                                configs
+                              );
+    
+                            </script>
+    
+                          </div>
+                        </div>
+                </div>
+             <!--Ozone Ground Level navigation--> 
+            <div class="tab-pane fade" id="o3" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="content">
+                    <div class="container-fluid">
+                    <h1>Air Quality Graphical Representation for Ozone</h1>
+                            <canvas id="o3Chart"></canvas>
+                            <script>
+                                const datass = {
+                                  labels: ['March 27', 'March 28', 'March 29', 'March 30', 'March 31', 'April 01', 'April 02'],
+                                  datasets: [{
+                                    label: 'o3',
+                                    data: [.322, .311, .444, .400, .236, .144, .188],
+                                    fill: false,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    tension: 0.1
+                                  }]
+                                };
+        
+                                const configss = {
+                                  type: 'line',
+                                  data: datass,
+                                  options: {
+                                    scales: {
+                                      y: {
+                                        min: 0,
+                                        max: 0.524,
+                                        axisLabel: 'o3 Levels'
+                                      }
+                                    }
+                                  }
+                                };
+        
+                                      var myChart = new Chart(
+                                        document.getElementById('o3Chart'),
+                                        configss
+                                      );
+            
+                                    </script>
+               
+                  </div>
+                    </div>
+            </div>
+            <!--carbon monoxide navigation-->
+            <div class="tab-pane fade" id="co" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="content">
+                    <div class="container-fluid">
+                    <h1>Air Quality Graphical Representation for CO</h1>
+                            <canvas id="coChart"></canvas>
+                            <script>
+                                const datasss = {
+                                  labels: ['March 27', 'March 28', 'March 29', 'March 30', 'March 31', 'April 01', 'April 02'],
+                                  datasets: [{
+                                    label: 'co',
+                                    data: [20, 35, 15, 29, 33, 12, 19],
+                                    fill: false,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    tension: 0.1
+                                  }]
+                                };
+        
+                                const configsss = {
+                                  type: 'line',
+                                  data: datasss,
+                                  options: {
+                                    scales: {
+                                      y: {
+                                        min: 0,
+                                        max: 40,
+                                        axisLabel: 'CO Levels'
+                                      }
+                                    }
+                                  }
+                                };
+        
+                                      var myChart = new Chart(
+                                        document.getElementById('coChart'),
+                                        configsss
+                                      );
+            
+                                    </script>
+                  </div>
+                    </div>
+            </div>
+            <!--Air Quality Status-->
+            <div class="tab-pane fade" id="aqs" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="content">
+                    <div class="container-fluid">
+                    <h1>Air Quality Graphical Representation for Air Quality Status</h1>
+                            <canvas id="aqsChart"></canvas>
+                            <script>
+                              const datassss = {
+                                labels: ['March 27', 'March 28', 'March 29', 'March 30', 'March 31', 'April 01', 'April 02'],
+                                datasets: [{
+                                  label: 'Air Quality Statys',
+                                  data: [355, 492, 180, 67, 211, 321, 80],
+                                  fill: false,
+                                  borderColor: 'rgb(75, 192, 192)',
+                                  tension: 0.1
+                                }]
+                              };
+    
+                              const configssss = {
+                                type: 'line',
+                                data: datassss,
+                                options: {
+                                  scales: {
+                                    y: {
+                                      min: 0,
+                                      max: 500,
+                                      axisLabel: 'Air Quality Levels'
+                                    }
+                                  }
+                                }
+                              };
+    
+                              var myChart = new Chart(
+                                document.getElementById('aqsChart'),
+                                configssss
+                              );
+    
+                            </script>
+               
+                  </div>
+                    </div>
+            </div>
+          </div>
+        
+        </div>
+        </div>
+          </div>
+        </div>
+                      
+               
+
+
+    
+</body>
+
+</html>

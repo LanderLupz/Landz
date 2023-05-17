@@ -39,8 +39,8 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('https://github.com/LanderLupz/Landz/blob/main/model_final/model.json');
-	$("#selected-image").attr("src", "https://github.com/LanderLupz/Landz/tree/main/assets/NV.jpg")
+	model = await tf.loadModel('http://localhost/SkinAnalyzer/Landz//model_final/model.json');
+	$("#selected-image").attr("src", "http://localhost/SkinAnalyzer/Landz/assets/NV.jpg")
 	
 	
 	// Simulate a click on the predict button

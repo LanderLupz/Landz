@@ -1,7 +1,16 @@
-<?php
-// clear all the session variables and redirect to index
-session_start();
-session_unset();
-session_write_close();
-$url = "index.html";
-header("Location: $url");
+<?php 
+
+	session_start();
+
+	$_SESSION = array();
+
+	if (isset($_COOKIE[session_name()])) {
+		setcookie(session_name(), '', time()-86400, '/');
+	}
+
+	session_destroy();
+
+	// redirecting the user to the login page
+	header('Location: index.html?action=logout');
+
+ ?>

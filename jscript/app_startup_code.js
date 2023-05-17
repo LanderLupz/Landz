@@ -33,8 +33,8 @@ function predictOnLoad() {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('https://github.com/LanderLupz/Landz/blob/main/model_final/model.json');
-	$("#selected-image").attr("src", "https://github.com/LanderLupz/Landz/tree/main/assets/NV.jpg");
+	model = await tf.loadModel('http://localhost/SkinAnalyzer/Landz//model_final/model.json');
+	$("#selected-image").attr("src", "http://localhost/SkinAnalyzer/Landz/assets/NV.jpg");
 	
 	// Hide the model loading spinner
 	// This line of html gets hidden:
@@ -109,7 +109,7 @@ $("#predict-button").click(async function () {
 	
 		
 		// Append the file name to the prediction list
-		var file_name = 'skind.jpg';
+		var file_name = 'NV.jpg';
 		$("#prediction-list").append(`<li style="list-style-type:none;"><b>FILENAME:  ${file_name}</b></li>`);
 		
 		//$("#prediction-list").empty();
